@@ -4,4 +4,4 @@
 
 技术栈：Python · FastAPI · LangGraph · Claude（anthropic SDK）。
 
-实现计划见知识库 docs/superpowers/plans/。当前阶段：计划一（后端核心）。
+设计文档见 [docs/design.md](docs/design.md)，实现计划见 [docs/plan-1-backend-core.md](docs/plan-1-backend-core.md)。当前阶段：计划一（后端核心）。
