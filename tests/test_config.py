@@ -6,6 +6,7 @@ def test_defaults():
     assert s.model_id == "claude-opus-4-8"
     assert s.max_followups_per_question == 2
     assert s.max_questions_per_stage == 4
+    assert s.effort == "high"
 
 
 def test_env_override(monkeypatch):

@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -8,4 +10,4 @@ class Settings(BaseSettings):
     model_id: str = "claude-opus-4-8"
     max_followups_per_question: int = 2
     max_questions_per_stage: int = 4
-    effort: str = "high"
+    effort: Literal["low", "medium", "high", "xhigh", "max"] = "high"
