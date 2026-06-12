@@ -27,7 +27,7 @@ class AnthropicClient:
                 "effort": self._settings.effort,
                 "format": {"type": "json_schema", "schema": schema},
             },
-            system=system or anthropic.NOT_GIVEN,
+            system=system if system is not None else anthropic.NOT_GIVEN,
             messages=[{"role": "user", "content": prompt}],
         )
         text = next(b.text for b in resp.content if b.type == "text")
@@ -39,7 +39,7 @@ class AnthropicClient:
             max_tokens=16000,
             thinking={"type": "adaptive"},
             output_config={"effort": self._settings.effort},
-            system=system or anthropic.NOT_GIVEN,
+            system=system if system is not None else anthropic.NOT_GIVEN,
             messages=[{"role": "user", "content": prompt}],
         ) as stream:
             for text in stream.text_stream:
